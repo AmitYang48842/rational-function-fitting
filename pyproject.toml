@@ -1,0 +1,14 @@
+[project]
+name = "rational-function-fitting"
+version = "0.1.0"
+description = "Fits a rational function p(x)/q(x) to sample data using exact linear algebra over the fractions module."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
