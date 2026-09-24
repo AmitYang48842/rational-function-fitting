@@ -27,3 +27,10 @@ Rational functions can represent curves that polynomials cannot, such as functio
 ## Edge cases
 
 The normalisation `q_lead = 1` means the denominator may vanish at some x values; no attempt is made to avoid poles in the data range.  If the data points are not enough to determine the unknowns, a `ValueError` is raised.  If more points are provided than needed, only the first `(numerator_degree + 1) + (denominator_degree + 1) - 1` points are used; the rest are ignored.  This is a deliberate choice to keep the API simple and exact.  If a least-squares fit is desired, pre-process the data before calling this function.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
