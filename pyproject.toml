@@ -1,6 +1,6 @@
 [project]
 name = "rational-function-fitting"
-version = "0.1.1"
+version = "0.1.2"
 description = "Fits a rational function p(x)/q(x) to sample data using exact linear algebra over the fractions module."
 requires-python = ">=3.10"
 dependencies = []
